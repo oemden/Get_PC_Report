@@ -20,6 +20,10 @@ echo ======= computername =============== >> %FILE%
 echo %computername% >> %FILE%
 
 
+echo ======= OS =============== >> %FILE%
+wmic /append:"%FILE%" os get Version,ServicePackMajorVersion >> nul
+
+
 echo ======= Serial Number And Model ==== >> %FILE%
 wmic /append:"%FILE%" csproduct get name,vendor,identifyingnumber >> nul
 
